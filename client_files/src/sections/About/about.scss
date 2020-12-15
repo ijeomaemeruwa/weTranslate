@@ -1,0 +1,37 @@
+.about_section {
+    height: 100%;
+
+.about_container {
+    padding: 3rem 0;
+
+.about_content {
+    h5 {
+        font-weight: 400;
+        font-size: 1.5rem;
+
+    span {
+       color: #3fc2e0;
+       font-weight: 600;
+    }
+    }
+
+.about_icon {
+    display: block;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--tertiary-color);
+    padding-bottom: 1rem;
+    animation: about_icon 0.5s alternate ease infinite; 
+}
+
+@keyframes about_icon {
+    from {
+        transform: translateY(2px);
+    }
+    to {
+        transform: translateY(-1px);
+    }
+}
+}
+}
+}

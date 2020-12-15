@@ -1,0 +1,37 @@
+.talent_section {
+    height: 100%;
+
+.talent_container {
+    padding: 3rem 0;
+
+.talent_content {
+
+    h3 {
+        font-weight: 400;
+
+    span {
+       color: #3fc2e0;
+       font-weight: 600;
+    }
+    }
+
+
+.talent_icon {
+    display: block;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--tertiary-color);
+    animation: talent_icon 0.5s alternate ease infinite; 
+}
+
+@keyframes talent_icon {
+    from {
+        transform: translateY(2px);
+    }
+    to {
+        transform: translateY(-1px);
+    }
+}
+}
+}
+}
