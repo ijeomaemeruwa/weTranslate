@@ -9,10 +9,7 @@ const Footer = () => {
     <>
      <footer className="footer">
      <div className="footer_content row mx-auto container">
-
-     <div className="footer_logo">
       <Logo />
-     </div>
 
       <div className="col-md-3">
        <h5>Service</h5>
@@ -34,6 +31,7 @@ const Footer = () => {
           <li>info@wetranslategroup.com</li>
         </ul>
       </div>
+      
       <div className="col-md-3">
         <h5>Community</h5>
         <ul className="community row mx-auto">

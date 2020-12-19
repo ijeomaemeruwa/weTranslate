@@ -1,30 +1,41 @@
-import React, { useEffect, useContext } from 'react';
-import { useHistory, Link } from 'react-router-dom';
-import UserContext from '../../context/UserContext';
+import React, {Component} from 'react';
+import './discover.scss';
+import DISCOVER from './discoverdata';
+import CountUp from 'react-countup';
+import FilterSearch from '../../components/FilterSearch';
 
-const Discover = () => {
-    const {userData} = useContext(UserContext);
-    const history = useHistory();
 
-    useEffect(() => {
-    if(!userData.user)
-    history.push("/login");
-    }); //may require dependency array
+class Discover extends Component {
+  state = {
+    discover: DISCOVER
+  }
 
-    return (
-    <div>
-      {userData.user ? (
-      <p>Welcome {userData.user.name}</p>
-      //Discover Content, cards and contact button
+  render() {
+    const { discover } = this.state
+  return (
+  <>
+  <section>
+   <FilterSearch />
+   <div className="discover_container">
+    {
+      discover.map(talent => (
+      <div key={talent.id} className="info">
+      <span>{talent.icon}</span>
 
-      ) : (
-     <div>
-     <h5>You are not logged in</h5>
-     <Link to="/login">Login</Link>
-     </div>
-    )}      
-    </div>
-    )
+      <div className="text-left talent_info">
+      <h5>{talent.name}</h5>
+      <h6>Language: {talent.language}</h6>
+      <p>Rating: <CountUp end={talent.rate} duration={5} className="countup" />%</p>
+      </div>
+      </div>
+      ))   
+    }   
+  </div>  
+  </section>   
+  </>
+  )
+}
 }
 
 export default Discover
+

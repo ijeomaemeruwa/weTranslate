@@ -3,13 +3,11 @@ import React, {useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import CustomInput from '../../components/CustomInput/CustomInput';
-import { Link } from 'react-router-dom';
 
 
-const Login = () => {
+const Reset = () => {
   const [input, setInput] = useState({
-     email: '',
-     password: ''
+     email: ''
   })
 
 
@@ -34,21 +32,8 @@ return (
       onChange={handleChange}
     />
     </Form.Group>
-
-    <Form.Group controlId="formGridComapany">
-    <Form.Label>Password</Form.Label>
-    <CustomInput 
-      type="text" 
-      value={input.password}
-      onChange={handleChange}
-     />
-    </Form.Group>
-    <div className="form_links">
-    <small><Link to="/signup">Sign Up</Link></small>
-    <small><Link to="/resetpassword">Forgot Password?</Link></small>
-    </div> 
   
-    <CustomButton type="submit">Log In</CustomButton>
+    <CustomButton type="submit">Reset Password</CustomButton>
     </Form> 
     </div>  
     </section>   
@@ -56,4 +41,4 @@ return (
     )
 }
 
-export default Login;
+export default Reset;

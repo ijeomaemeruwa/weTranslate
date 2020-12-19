@@ -2,15 +2,17 @@
     height: 100%;
 
 .talent_container {
-    padding: 3rem 0;
+    height: 80vh;
+    padding: 2rem 0;
 
 .talent_content {
+    padding: 0 3rem;
 
-    h3 {
+    p {
         font-weight: 400;
 
     span {
-       color: #3fc2e0;
+       color: var(--secondary-color);
        font-weight: 600;
     }
     }

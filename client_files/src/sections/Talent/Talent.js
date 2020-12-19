@@ -5,27 +5,27 @@ import CustomButton from '../../components/CustomButton/CustomButton';
 import { BsPerson } from 'react-icons/bs';
 
 import Image from 'react-bootstrap/Image';
-import request from '../../assets/images/makerequest.png';
-
 
 const Talent = () => {
     return (
     <>
     <section className="talent_section">
-    <div className="talent_container row mx-auto">
-
-    <div className="talent_content text-center col-md-4 my-auto">
+    <div className="talent_container container row mx-auto">
+    <div className="talent_content col-md-5 my-auto text-center">
     <span className="talent_icon"><BsPerson /></span>
-    <h3>Discover and hire <span>top talent.</span></h3>
+    <p>Discover and hire top <span>talent.</span></p>
+    <h4>Let us help you get the best professional service.</h4>
     <CustomButton>
      Hire Talent
     </CustomButton>
     </div>
 
-    <div className="col-md-6">
-    <Image src={request} alt="makerequest_vector" fluid />
+    <div className="col-md-6 mx-auto">
+    <Image 
+    src={"https://i.pinimg.com/originals/83/2a/46/832a460b522c84fa9650c11face5927e.jpg"} 
+    alt="talent" fluid 
+    />
     </div>
-
     </div>    
     </section>       
     </>

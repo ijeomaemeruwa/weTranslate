@@ -9,7 +9,7 @@ const Hero = () => {
     <section className="hero">
     <div className="hero_container">
     <div className="col-md-8 my-auto hero_content">
-    <h1>Gain global reach for your business.</h1>
+    <h1>Gain <span>global</span> reach for your business.</h1>
     <h4>Get in touch with talent from across the globe.</h4>
     <CustomButton>
      Find Talent

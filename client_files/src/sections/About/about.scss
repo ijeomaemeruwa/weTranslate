@@ -1,16 +1,16 @@
 .about_section {
     height: 100%;
 
-.about_container {
-    padding: 3rem 0;
-
 .about_content {
+    height: 50vh; 
+    
     h5 {
         font-weight: 400;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        padding: 0 1rem;
 
     span {
-       color: #3fc2e0;
+       color: var(--secondary-color);
        font-weight: 600;
     }
     }
@@ -31,7 +31,6 @@
     to {
         transform: translateY(-1px);
     }
-}
 }
 }
 }

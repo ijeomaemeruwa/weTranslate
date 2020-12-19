@@ -1,0 +1,53 @@
+.discover_container {
+    height: 100%;
+    width: 80%;
+    padding: 3rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    cursor: pointer;
+
+.info {
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    width: 250px;
+    height: 100%;
+    padding: 1rem;
+    margin: 2rem 1rem;
+    text-align: center;
+    transition: all 500ms ease-in-out;
+
+&:hover {
+    margin-bottom: 50px;
+    cursor: pointer;
+    box-shadow: 3px 5px 13px -3px rgba(26,20,20,0.51);
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+span {
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+}
+}
+
+.talent_info {
+h5 {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-top: 2rem;
+
+}
+
+h6, p {
+    color: #888;
+}
+
+.countup {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+}
+}

@@ -1,9 +1,6 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import './navbar.scss';
 import Logo from '../Logo';
-
-import { useHistory } from 'react-router-dom';
-import UserContext from '../../context/UserContext';
 
 import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
@@ -12,26 +9,14 @@ import Languages from '../Languages/Languages';
 
 
 const NavBar = () => {
-  const { userData, setUserData } = useContext(UserContext);
-  const history = useHistory();
-  const register = () => history.push("/signup");
-  const login = () => history.push("/login");
-  const logout = () => {
-     setUserData({
-     token: undefined,
-     user: undefined
-    })
-  localStorage.setItem("auth-token","");
-  };
-
-
+  
   return (
   <>
     <nav className="nav_bar">
     <div className="nav_container">
 
     <div className="nav_logo">
-    <Logo />
+    <RouterLink to="/"><Logo /></RouterLink>
     </div>
 
     <div className="mobile_icon">
@@ -47,17 +32,11 @@ const NavBar = () => {
       </ScrollLink>
     </li>
     <li><RouterLink to="/discover" className="nav_link">Discover</RouterLink></li>
-
-    <li className="signup" onClick={register}>Sign Up</li>
+    <li><RouterLink to="/signup" className="signup">Sign Up</RouterLink></li>
     </ul> 
 
     <div className="nav_content">
-    {userData.user ? (
-    <p clasName="login" onClick={logout}>Logout</p>
-    ) : (
-    <p className="login" onClick={login}>Log In</p>
-    )}
-
+    <p><RouterLink to="/login" className="login">Log In</RouterLink></p>
     <Languages />
     </div>
     </div>

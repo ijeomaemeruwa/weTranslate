@@ -5,6 +5,7 @@ import About from '../../sections/About/About';
 import Process from '../../sections/Process/Process';
 import Talent from '../../sections/Talent/Talent';
 import Footer from '../../sections/Footer/Footer';
+import Testimonial from '../../sections/Testimonial/Testimonial';
 
 const Home = () => {
     return (
@@ -12,7 +13,8 @@ const Home = () => {
      <Hero />
      <About /> 
      <Process />
-     <Talent /> 
+     <Talent />
+     <Testimonial/> 
      <Footer />     
     </>
     )

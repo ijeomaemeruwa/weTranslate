@@ -1,9 +1,9 @@
 
 :root {
-  --primary-color: #fff;
-  --secondary-color: #b8e2de;
-  --accent-color: #f9fdff;
-  /* --text-color: #5e709d; */
+  --primary-color: #033b49;
+  --secondary-color: #00dca7;
+  --accent-color: #f7f7f7;
+  --body: #fefefe;
   --text-color: #1e1e2c;
 }
 
@@ -18,8 +18,7 @@ html, body {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: var(--primary-color) !important;
-  color: #425466;
+  background: var(--body) !important;
 }
 
 
@@ -32,6 +31,6 @@ body {
   font-size: 1.5rem;
   background: var(--secondary-color);
   background-image: linear-gradient(to right, #41e4cb , #3fc2e0);
-  color: var(--primary-color);
+  color: var(--body);
   padding: 5px 10px;
 }

@@ -1,27 +1,25 @@
 footer {
-    background: var(--text-color);
+    background: var(--primary-color);
     color: #cdcdcd;
     height: 100%;
 
 .footer_content {
-    padding: 2rem;
-
-    .footer_logo {
-        margin: 0 2rem;
-    }
+    margin: 0 auto;
        
     h5 {
-        color: #5e709d;
+        color: #888;
         font-weight: bold;
         cursor: pointer;
     }
 
     ul {
-        padding: 0.8rem 0;
+        padding: 1rem 0;
 
     li {
         list-style: none;
         cursor: pointer;
+        font-size: 1rem;
+        padding: 0.6rem 0;
 
     &:hover {
         color: #fefefe;

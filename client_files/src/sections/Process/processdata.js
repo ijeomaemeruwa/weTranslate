@@ -1,27 +1,22 @@
-
-// import register from '../../assets/images/register.png'
-// import search from '../../assets/images/searchtalent.png'
-// import request from '../../assets/images/makerequest.png'
-
-import { BsPeople } from 'react-icons/bs'
+import { FiUsers, FiZoomIn, FiLock } from 'react-icons/fi'
 
 const PROCESS_DATA = [
 
     {
         id: '1',
-        img: '',
+        img: <FiLock />,
         text: 'Register',
         detail: 'Register and fill out prefrences and join our community of clients from around the world.'
     },
     {
         id: '2',
-        img: '',
+        img: <FiZoomIn />,
         text: 'Search',
         detail: 'Search for top talent based on languages, skills or years of experience.'
     },
     {
         id: '3',
-        img: <BsPeople />,
+        img: <FiUsers />,
         text: 'Make Request',
         detail: 'Send a request to your preferred choice and let us take care of the rest.'
     }

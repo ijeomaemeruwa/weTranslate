@@ -7,14 +7,15 @@ const Languages = (props) => {
     <div>
     <select className="select"
     value={props.language}
-    onChange={e => props.handleSetLanguage(e.target.value)}
+    // onChange={e => props.handleSetLanguage(e.target.value)}
     >
     <option value="English">English</option>
     <option value="French">French</option>
+    <option value="German">French</option>
     </select>     
     </div>       
     </>
     )
 }
 
-export default Languages
+export default Languages;
