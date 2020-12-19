@@ -1,40 +1,36 @@
 const express = require('express');
+const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const cors = require('cors');
+const morgan = require('morgan');
+const path = require("path");
 require('dotenv').config();
 
 const app = express();
 
-
-//middleware
+//Middlewares
+app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
-
-// parses requests of content-type to application/json in order to use in the route
-app.use(express.json());
-
-// parse requests of content-type to application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }));
-
+app.use(morgan('dev'));
+app.use(bodyParser.json({limit: "10mb"}));
+app.use(bodyParser.urlencoded({extended: false, limit: "10mb"}));
 
 
 //Connect to MongoDB using the connection string
-const mongoURL = process.env.DATABASE_URL
-mongoose.connect(
-  mongoURL,
-  { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
-  .then(() => {console.log("Successfully connected to MongoDB.")})
-  .catch(err => {console.error("Connection error", err)});
+const databaseURL = process.env.DATABASE_URL
+mongoose.connect(databaseURL, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+const db = mongoose.connection;
+db.on("error", error => console.log("Connection error"));
+db.on("open", () => console.log("Connected to MongoDB"));
 
 
 //routes and middleware
-// const authRoutes = require('./routes/api/auth.js');
-// app.use('/api', authRoutes);
-
-// app.use("/discover", require("./routes/api/discover"));
+const userRoute = require('./routes/users.js');
+app.use('/users', userRoute);
 
 
 // set port, listen for requests
-const PORT = process.env.port || 8000
+const PORT = process.env.port || 5000
 app.listen(PORT, () => {
   console.log(`App is listening on port ${PORT}`);
 });

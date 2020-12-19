@@ -1,23 +1,22 @@
 //Middleware to perform validation check on generated token
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken")
 
-
-const auth = (req, res, next) => {
-try{
-   const token = req.header("x-auth-token");
-   if(!token)
-   return res.status(401).json({msg: "No authentication token, access denied"});
-
-   const verified = jwt.verify(token, process.env.JWT_SECRET);
-   if(!verified)
-   return res.status(401).json({msg: "Token verification failed, authorization denied"});
-   req.user = verified.id;
-    next();
-
-} 
-catch (err) {
-   res.status(500).json({ error: err.message });
+module.exports.verifyToken = async function (req, res, next){
+    const token = req.header('Authorization')
+    // console.log(token);
+    if(token === undefined || token === ""){
+        return res.status(401).json({error: 'Access Denied, please log in'});
+    }else{
+        try{
+            const {info} = await jwt.verify(token, process.env.JWT_SECRET)
+            if(!info){
+                return res.status(401).json({error: 'Access Denied'})
+            }
+            req.user = info
+            next()
+        }catch(err){
+            console.log(err);
+            res.status(400).send({error: 'invalid token'})
+        }
+    }
 }
-}
-
-module.exports = auth;
