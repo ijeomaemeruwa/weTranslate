@@ -7,18 +7,30 @@ import FilterSearch from '../../components/FilterSearch';
 
 class Discover extends Component {
   state = {
-    discover: DISCOVER
+    discover: DISCOVER,
+    search: ''
   }
 
+
+  handleChange = (e) => {
+    this.setState({ search: e.target.value })
+  }
+
+  
   render() {
-    const { discover } = this.state
+
+  const { discover, search } = this.state
+  const filtered = discover.filter(lang => {
+    return lang.language.toLowerCase().includes(search.toLowerCase());
+  })
+
   return (
   <>
   <section>
-   <FilterSearch />
+   <FilterSearch search={search} onChange={this.handleChange} />
    <div className="discover_container">
     {
-      discover.map(talent => (
+      filtered.map(talent => (
       <div key={talent.id} className="info">
       <span>{talent.icon}</span>
 
