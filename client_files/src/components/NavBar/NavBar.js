@@ -6,9 +6,10 @@ import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
 import { VscMenu } from 'react-icons/vsc';
 import Languages from '../Languages/Languages';
+import {isAuthenticated, logOut} from '../../pages/Auth/helpers';
 
 
-const NavBar = () => {
+const NavBar = ({history}) => {
   
   return (
   <>
@@ -36,7 +37,16 @@ const NavBar = () => {
     </ul> 
 
     <div className="nav_content">
-    <p><RouterLink to="/login" className="login">Log In</RouterLink></p>
+    {!isAuthenticated() && (
+    <p><RouterLink to="/login" className="log">Log In</RouterLink></p>
+    )}
+
+    {isAuthenticated() && (
+    <p className="log" onClick={() => {logOut(() => {history.push('/')})}}>
+    Log Out
+    </p>
+    )}
+    
     <Languages />
     </div>
     </div>
